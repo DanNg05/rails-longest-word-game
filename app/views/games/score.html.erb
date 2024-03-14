@@ -1,2 +1,11 @@
-<h1>Your result</h1>
-<p><%= @answer %></p>
+<div class="new">
+  <h1>RESULT</h1>
+  <% if @answer == "english word" %>
+  <p>Congratulations! <%=@word.upcase%> is an English word.</p>
+  <% elsif @answer == "Sorry not an English word!" %>
+  <p>Sorry but <%= @word.upcase %> does not seem to be a valid English word.</p>
+  <% else %>
+  <p>Sorry but <%= @word.upcase %> can't be built from the grid.</p>
+  <% end %>
+  <%= link_to "Play again", new_path %>
+</div>

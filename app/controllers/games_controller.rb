@@ -16,9 +16,10 @@ class GamesController < ApplicationController
     # web = "https://wagon-dictionary.herokuapp.com/#{@word}"
     # user_serialized = URI.open(web).read
     # user = JSON.parse(user_serialized)
+    # @include = include?(@word, @grid)
     if include?(@word, @grid)
       if check_word(@word)
-        @answer = "well done"
+        @answer = "english word"
       else
         @answer = "Sorry not an English word!"
       end
